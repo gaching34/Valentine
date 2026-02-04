@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* App Centering */
+#app {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Valentine Box */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+  box-shadow:
+    0 0 20px rgba(255, 77, 109, 0.7),
+    0 0 40px rgba(100, 149, 237, 0.6);
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+p {
+  color: #444;
+  font-size: 18px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px black;
+}
+  button:active {
+    transform:translateY(5px);
+  }
+
+button:hover {
+  background: #e63950;
+}
+
+.hearts {
+  margin-top: 20px;
+  font-size: 24px;
+  animation: float 2s infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+/* Effects Layer */
+#effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Hearts */
+.floating-heart {
+  position: absolute;
+  bottom: -30px;
+  animation: rise 4s linear forwards;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
